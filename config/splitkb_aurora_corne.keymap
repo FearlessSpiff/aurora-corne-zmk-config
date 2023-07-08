@@ -7,50 +7,433 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/ext_power.h>
+#include <dt-bindings/zmk/outputs.h>
+#include "keymap_german.h"
+
+// Layers
+// Win and Linux
+#define DEF     0
+#define NAV     1
+#define SYM     2
+#define NUM     3
+#define FN      4
+#define SET     5
+
+// Mac
+#define M_DEF   6
+#define M_NAV   7
+#define M_SYM   8
+#define M_NUM   9
+#define M_FN    10
+#define M_SET   11
+
+// Gaming without HRM
+#define G_DEF   12
+#define G_NAV   13
+#define G_SYM   14
+#define G_NUM   15
+#define G_FN    16
+#define G_SET   17
+
+
+// Special shortcuts
+#define ________     &trans
+#define TODO         &trans
+#define DEL_W        &kp LC(BSPC)
+#define SPACE_SYM    &lt SYM SPACE
+#define SPACE_M_SYM  &lt M_SYM SPACE
+#define SPACE_G_SYM  &lt G_SYM SPACE
+#define C_NAV        &lt NAV C
+#define C_M_NAV      &lt M_NAV C
+#define C_G_NAV      &lt G_NAV C
+#define Y_NUM        &lt NUM Z
+#define Y_M_NUM      &lt M_NUM Z
+#define Y_G_NUM      &lt G_NUM Z
+
+#define BT_1       &bt BT_SEL 0
+#define BT_2       &bt BT_SEL 1
+#define BT_3       &bt BT_SEL 2
+#define BT_4       &bt BT_SEL 3
+#define BT_5       &bt BT_SEL 4
+#define BT_CLEAR   &bt BT_CLR
+
+#define EXT_OFF  &ext_power EP_OFF
+#define EXT_ON   &ext_power EP_ON
+
+// home row mod left
+#define ALT_R &hm LALT R
+#define CTL_I &hm LCTRL I
+#define SFT_E &hm LSHIFT E
+#define SFT_RPRN &hm RSHIFT DE_RPRN
+
+// home row mod right
+#define SFT_N    &hm RSHIFT N
+#define SFT_LBRC &hm RSHIFT DE_LBRC
+#define CTL_T    &hm RCTRL T
+#define RALT_S   &hm RALT S
+#define ALT_H    &hm LALT H
+
+// home row mod mac
+#define CMD_I  &hm LGUI I
+#define CMD_T  &hm LGUI T
+#define CTL_H  &hm RCTRL H
+#define CTL_K  &hm RCTRL K
+#define CTL_V  &hm LCTRL V
+
+// mac shortcuts
+#define M_HME    &kp LG(LEFT)
+#define M_END    &kp LG(RIGHT)
+#define M_PUP    &kp LA(UP)
+#define M_PDWN   &kp LA(DOWN)
+
+&sk {
+        release-after-ms = <3000>;
+};
 
 / {
-        keymap {
-                compatible = "zmk,keymap";
 
-                default_layer {
-// -----------------------------------------------------------------------------------------
-// |  TAB |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U   |  I  |  O  |  P  | BKSP |
-// | CTRL |  A  |  S  |  D  |  F  |  G  |   |  H  |  J   |  K  |  L  |  ;  |  '   |
-// | SHFT |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M   |  ,  |  .  |  /  | ESC  |
-//                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
-                        bindings = <
-   &kp TAB   &kp Q &kp W &kp E &kp R &kp T   &kp Y &kp U  &kp I     &kp O   &kp P    &kp BSPC
-   &kp LCTRL &kp A &kp S &kp D &kp F &kp G   &kp H &kp J  &kp K     &kp L   &kp SEMI &kp SQT
-   &kp LSHFT &kp Z &kp X &kp C &kp V &kp B   &kp N &kp M  &kp COMMA &kp DOT &kp FSLH &kp ESC
-                  &kp LGUI &mo 1 &kp SPACE   &kp RET &mo 2 &kp RALT
-                        >;
-                };
-                lower_layer {
-// -----------------------------------------------------------------------------------------
-// |  TAB |  1  |  2  |  3  |  4  |  5  |   |  6  |  7  |  8  |  9  |  0  | BKSP |
-// | BTCLR| BT1 | BT2 | BT3 | BT4 | BT5 |   | LFT | DWN |  UP | RGT |     |      |
-// | SHFT |     |     |     |     |     |   |     |     |     |     |     |      |
-//                    | GUI |     | SPC |   | ENT |     | ALT |
-                        bindings = <
-   &kp TAB    &kp N1       &kp N2       &kp N3       &kp N4       &kp N5         &kp N6   &kp N7   &kp N8 &kp N9    &kp N0 &kp BSPC
-   &bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4   &kp LEFT &kp DOWN &kp UP &kp RIGHT &trans &trans
-   &kp LSHFT  &trans       &trans       &trans       &trans       &trans         &trans   &trans   &trans &trans    &trans &trans
-                                    &kp LGUI     &trans       &kp SPACE      &kp RET  &trans   &kp RALT
-                        >;
-                };
+    macros {
+        ZMK_MACRO(go_src,
+            wait-ms = <30>;
+            tap-ms = <40>;
+            bindings
+                = <&macro_press   &kp LALT>
+                , <&macro_tap     &kp F1>
+                , <&macro_release &kp LALT>
+                , <&macro_wait_time 2000>
+                , <&macro_tap     &kp RET>
+                ;
+        )
 
-                raise_layer {
-// -----------------------------------------------------------------------------------------
-// |  TAB |  !  |  @  |  #  |  $  |  %  |   |  ^  |  &  |  *  |  (  |  )  | BKSP |
-// | CTRL |     |     |     |     |     |   |  -  |  =  |  [  |  ]  |  \  |  `   |
-// | SHFT |     |     |     |     |     |   |  _  |  +  |  {  |  }  | "|" |  ~   |
-//                    | GUI |     | SPC |   | ENT |     | ALT |
-                        bindings = <
-   &kp  TAB  &kp EXCL &kp AT &kp HASH &kp DLLR &kp PRCNT   &kp CARET &kp AMPS  &kp KP_MULTIPLY &kp LPAR &kp RPAR &kp BSPC
-   &kp LCTRL &trans   &trans &trans   &trans   &trans      &kp MINUS &kp EQUAL &kp LBKT        &kp RBKT &kp BSLH &kp GRAVE
-   &kp LSHFT &trans   &trans &trans   &trans   &trans      &kp UNDER &kp PLUS  &kp LBRC        &kp RBRC &kp PIPE &kp TILDE
-                             &kp LGUI &trans   &kp SPACE   &kp RET   &trans    &kp RALT
-                        >;
-                };
+        ZMK_MACRO(run,
+            wait-ms = <30>;
+            tap-ms = <40>;
+            bindings
+                = <&macro_press   &kp LALT>
+                , <&macro_press   &kp LSHFT>
+                , <&macro_tap     &kp F10>
+                , <&macro_release &kp LSHFT>
+                , <&macro_release &kp LALT>
+                ;
+        )
+
+	    ZMK_MACRO(cad,
+            wait-ms = <30>;
+            tap-ms = <40>;
+            bindings
+                = <&macro_press   &kp LCTL>
+                , <&macro_press   &kp LALT>
+                , <&macro_tap     &kp DEL>
+                , <&macro_release &kp LALT>
+                , <&macro_release &kp LCTL>
+                ;
+        )
+
+        ZMK_MACRO(lck,
+            wait-ms = <30>;
+            tap-ms = <40>;
+            bindings
+                = <&macro_press   &kp LGUI>
+                , <&macro_tap     &kp L>
+                , <&macro_release &kp LGUI>
+                ;
+        )
+
+        ZMK_MACRO(lck_mac,
+            wait-ms = <30>;
+            tap-ms = <40>;
+            bindings
+                = <&macro_press   &kp LGUI>
+                , <&macro_press   &kp LCTL>
+                , <&macro_tap     &kp Q>
+                , <&macro_release &kp LCTL>
+                , <&macro_release &kp LGUI>
+                ;
+        )
+
+        ZMK_MACRO(to_mtbk,
+            wait-ms = <30>;
+            tap-ms = <40>;
+            bindings
+                = <&macro_tap  BT_1>
+                , <&macro_tap  &to DEF>
+                ;
+        )
+
+        ZMK_MACRO(to_six,
+            wait-ms = <30>;
+            tap-ms = <40>;
+            bindings
+                = <&macro_tap  BT_2>
+                , <&macro_tap  &to DEF>
+                ;
+        )
+
+        ZMK_MACRO(to_nca,
+            wait-ms = <30>;
+            tap-ms = <40>;
+            bindings
+                = <&macro_tap  BT_3>
+                , <&macro_tap  &to M_DEF>
+                ;
+        )
+
+        ZMK_MACRO(to_ipad,
+            wait-ms = <30>;
+            tap-ms = <40>;
+            bindings
+                = <&macro_tap  BT_4>
+                , <&macro_tap  &to M_DEF>
+                ;
+        )
+
+    };
+
+    combos {
+        compatible = "zmk,combos";
+
+        combo_tab {
+            timeout-ms = <50>;
+            key-positions = <10 20>;
+            bindings = <&kp TAB>;
         };
+
+        combo_enter {
+            timeout-ms = <50>;
+            key-positions = <19 29>;
+            bindings = <&kp RET>;
+        };
+
+        combo_win {
+            timeout-ms = <50>;
+            key-positions = <30 31>;
+            bindings = <&kp LGUI>;
+            layers = <0 1 2 3 4 5 12 13 14 15 16 17>;
+        };
+
+        combo_mac_globe {
+            timeout-ms = <50>;
+            key-positions = <30 31>;
+            bindings = <&kp CAPS>;
+            layers = <6 7 8 9 10 11>;
+        };
+    };
+
+    behaviors {
+        hm: homerow_mods {
+                    compatible = "zmk,behavior-hold-tap";
+                    label = "HOMEROW_MODS";
+                    #binding-cells = <2>;
+                    tapping-term-ms = <180>;
+                    quick-tap-ms = <0>;
+                    flavor = "tap-preferred";
+                    bindings = <&kp>, <&kp>;
+            };
+    };
+
+
+    keymap {
+        compatible = "zmk,keymap";
+
+        default_layer {
+            bindings = <
+                ________  &kp J  &kp L  &kp U        &kp A        &kp Q                   &kp W      &kp B      &kp D      &kp G    &kp DE_Z  ________
+                ________  C_NAV  ALT_R  CTL_I        SFT_E        &kp O                   &kp M      SFT_N      CTL_T      RALT_S   ALT_H  ________
+                ________  &kp V  &kp X  &kp DE_UDIA  &kp DE_ADIA  &kp DE_ODIA             &kp P      &kp F      &kp COMMA  &kp DOT  &kp K  ________
+                                        &kp LGUI     Y_NUM        &kp LSHFT               SPACE_SYM  &kp BSPC   &kp LALT
+             >;
+        };
+
+
+        nav_layer {
+            bindings = <
+            	________  &kp ESC   &lck       &run      &go_src   ________             &kp PG_UP  &kp HOME  &kp UP    &kp END    &kp DE_Y  ________
+            	________  ________  ________   ________  ________  &kp TAB              &kp PG_DN  &kp LEFT  &kp DOWN  &kp RIGHT  &kp RET  ________
+            	________  &kp LSHFT ________   ________  &kp TAB   ________             ________   ________  ________  ________   &kp DE_SS  ________
+            	                               ________  ________  ________             ________   &kp DEL  ________
+   			>;
+        };
+
+
+        sym_layer {
+        // ---------------------------------------------------------------------
+        // |  ^  |  _  |  {  |  }  |  §  |       |  !  |  <  |  >  |  =  |  &  |
+        // |  \  |  /  |  (  |  )  |  *  |       |  ?  |  [  |  ]  |  -  |  :  |
+        // |  `  |  $  |  |  |  ~  |  #  |       |  +  |  %  |  "  |  '  |  ;  |
+        //                   | --- | --- |       | --- | --- |
+        	bindings = <
+                ________  &kp DE_CIRC  &kp DE_UNDS  &kp DE_LCBR  &kp DE_RCBR  &kp DE_SECT          &kp DE_EXLM  &kp DE_LABK  &kp DE_RABK  &kp DE_EQL   &kp DE_AMPR  ________
+                ________  &kp DE_BSLS  &kp DE_SLSH  &kp DE_LPRN  SFT_RPRN     &kp DE_ASTR          &kp DE_QUES  SFT_LBRC     &kp DE_RBRC  &kp DE_MINS  &kp DE_COLN  ________
+                ________  &kp DE_ACUT  &kp DE_DLR   &kp DE_PIPE  &kp DE_TILD  &kp DE_HASH          &kp DE_PLUS  &kp DE_PERC  &kp DE_DQUO  &kp DE_QUOT  &kp DE_SCLN  ________
+        	                                           ________  ________     ________             ________     ________     ________
+        	>;
+        };
+
+
+        num_layer {
+            bindings = <
+                ________  ________  ________  ________  &mo SET     ________         &kp DE_SLSH  &kp N7  &kp N8  &kp N9  &kp DE_MINS  ________
+                ________  &sk LGUI  &sk LALT  &sk LCTRL &sk LSHIFT  ________         &kp DE_ASTR  &kp N4  &kp N5  &kp N6  &kp DE_PLUS  ________
+                ________  ________  ________  ________  &mo FN      ________         &kp COMMA    &kp N1  &kp N2  &kp N3  &kp N0  ________
+                                              ________  ________    ________         &kp DE_COLN  &kp DOT  ________
+            >;
+        };
+
+
+        fn_layer {
+            bindings = <
+                ________  ________  ________  ________  ________  ________          ________  &kp F7  &kp F8  &kp F9  ________  ________
+                ________  ________  ________  ________  ________  ________          ________  &kp F4  &kp F5  &kp F6  ________  ________
+                ________  ________  ________  ________  ________  ________          ________  &kp F1  &kp F2  &kp F3  &kp F10  ________
+                                              ________  ________  ________          &kp F11   &kp F12  ________
+            >;
+        };
+
+
+        settings_layer {
+            bindings = <
+                ________  EXT_OFF       EXT_ON        ________  ________  BT_CLEAR          ________    ________  ________  ________  &to DEF  ________
+                ________  &out OUT_USB  &out OUT_BLE  ________  ________  ________          ________    &to_ipad  BT_5      ________  &to M_DEF  ________
+                ________  ________      ________      ________  ________  ________          ________    &to_mtbk  &to_six   &to_nca   &to G_DEF  ________
+                                                      ________  ________  ________          ________    ________  ________
+            >;
+        };
+
+
+
+
+
+        mac_default_layer {
+            bindings = <
+                ________  &kp J    &kp L  &kp U        &kp A        &kp Q                   &kp W        &kp B      &kp D      &kp G    &kp DE_Z  ________
+                ________  C_M_NAV  ALT_R  CMD_I        SFT_E        &kp O                   &kp M        SFT_N      CMD_T      RALT_S   ALT_H  ________
+                ________  CTL_V    &kp X  &kp DE_UDIA  &kp DE_ADIA  &kp DE_ODIA             &kp P        &kp F      &kp COMMA  &kp DOT  CTL_K  ________
+                                          &kp CAPS     Y_M_NUM      &kp LSHFT               SPACE_M_SYM  &kp BSPC   &kp RCTRL
+             >;
+        };
+
+
+        mac_nav_layer {
+            bindings = <
+            	________  &kp ESC   &lck_mac   &run      &go_src   ________             M_PUP    M_HME     &kp UP    M_END     &kp DE_Y  ________
+            	________  ________  ________   ________  ________  ________             M_PDWN   &kp LEFT  &kp DOWN  &kp RIGHT  &kp RET  ________
+            	________  &kp LSHFT ________   ________  ________  ________             ________  ________  ________  ________   &kp DE_SS  ________
+            	                               ________  ________  ________             ________  &kp DEL  ________
+   			>;
+        };
+
+
+        mac_sym_layer {
+        // ---------------------------------------------------------------------
+        // |  ^  |  _  |  {  |  }  |  §  |       |  !  |  <  |  >  |  =  |  &  |
+        // |  \  |  /  |  (  |  )  |  *  |       |  ?  |  [  |  ]  |  -  |  :  |
+        // |  `  |  $  |  |  |  ~  |  #  |       |  +  |  %  |  "  |  '  |  ;  |
+        //                   | --- | --- |       | --- | --- |
+        	bindings = <
+                ________  &kp DE_LABK  &kp DE_UNDS  &kp DE_LCBR     &kp DE_RCBR  &kp LS(N3)           &kp DE_EXLM  &kp DE_CIRC  &kp LS(DE_CIRC)  &kp DE_EQL   &kp DE_AMPR  ________
+                ________  &kp DE_BSLS  &kp DE_SLSH  &kp DE_LPRN     SFT_RPRN     &kp DE_ASTR          &kp DE_QUES  SFT_LBRC     &kp DE_RBRC      &kp DE_MINS  &kp DE_COLN  ________
+                ________  &kp DE_ACUT  &kp DE_DLR   &kp LA(DE_CIRC) &kp DE_TILD  &kp DE_HASH          &kp DE_PLUS  &kp DE_PERC  &kp DE_DQUO      &kp DE_QUOT  &kp DE_SCLN  ________
+        	                                              ________  ________     ________             ________     ________     ________
+        	>;
+        };
+
+
+        mac_num_layer {
+            bindings = <
+                ________  ________   ________  ________  &mo M_SET   ________          &kp DE_SLSH  &kp N7  &kp N8  &kp N9  &kp DE_MINS  ________
+                ________  &sk LCTRL  &sk LALT  &sk LGUI  &sk LSHIFT  ________          &kp DE_ASTR  &kp N4  &kp N5  &kp N6  &kp DE_PLUS  ________
+                ________  ________   ________  ________  &mo M_FN    ________          &kp COMMA  &kp N1  &kp N2  &kp N3  &kp N0  ________
+                                               ________  ________    ________          &kp DE_COLN  &kp DOT  ________
+            >;
+        };
+
+
+        mac_fn_layer {
+            bindings = <
+                ________  ________  ________  ________  ________  ________          ________  &kp F7  &kp F8  &kp F9  ________  ________
+                ________  ________  ________  ________  ________  ________          ________  &kp F4  &kp F5  &kp F6  ________  ________
+                ________  ________  ________  ________  ________  ________          ________  &kp F1  &kp F2  &kp F3  &kp F10  ________
+                                              ________  ________  ________          &kp F11   &kp F12  ________
+            >;
+        };
+
+
+        mac_settings_layer {
+            bindings = <
+                ________  EXT_OFF       EXT_ON        ________  ________  BT_CLEAR          ________    ________  ________  ________  &to DEF  ________
+                ________  &out OUT_USB  &out OUT_BLE  ________  ________  ________          ________    &to_ipad  BT_5      ________  &to M_DEF  ________
+                ________  ________      ________      ________  ________  ________          ________    &to_mtbk  &to_six   &to_nca   &to G_DEF  ________
+                                                      ________  ________  ________          ________    ________  ________
+            >;
+        };
+
+
+
+
+
+        game_default_layer {
+            bindings = <
+                ________  &kp J    &kp L  &kp U        &kp A        &kp Q                   &kp W        &kp B      &kp D      &kp G    &kp DE_Z  ________
+                ________  C_G_NAV  &kp R  &kp I        &kp E        &kp O                   &kp M        &kp N      &kp T      &kp S    &kp H  ________
+                ________  &kp V    &kp X  &kp DE_UDIA  &kp DE_ADIA  &kp DE_ODIA             &kp P        &kp F      &kp COMMA  &kp DOT  &kp K  ________
+                                             ________  Y_G_NUM      &kp LSHFT               SPACE_G_SYM  &kp BSPC   ________
+             >;
+        };
+
+        game_nav_layer {
+            bindings = <
+            	________  &kp ESC   &lck       &run      &go_src   ________             &kp PG_UP  &kp HOME  &kp UP    &kp END    &kp DE_Y  ________
+            	________  ________  ________   ________  ________  ________             &kp PG_DN  &kp LEFT  &kp DOWN  &kp RIGHT  &kp RET  ________
+            	________  &kp LSHFT ________   ________  ________  ________             ________   ________  ________  ________   &kp DE_SS  ________
+            	                               ________  ________  ________             ________   &kp DEL   ________
+   			>;
+        };
+
+
+        game_sym_layer {
+        // ---------------------------------------------------------------------
+        // |  ^  |  _  |  {  |  }  |  §  |       |  !  |  <  |  >  |  =  |  &  |
+        // |  \  |  /  |  (  |  )  |  *  |       |  ?  |  [  |  ]  |  -  |  :  |
+        // |  `  |  $  |  |  |  ~  |  #  |       |  +  |  %  |  "  |  '  |  ;  |
+        //                   | --- | --- |       | --- | --- |
+        	bindings = <
+                ________  &kp DE_CIRC  &kp DE_UNDS  &kp DE_LCBR  &kp DE_RCBR  &kp DE_SECT          &kp DE_EXLM  &kp DE_LABK  &kp DE_RABK  &kp DE_EQL   &kp DE_AMPR  ________
+                ________  &kp DE_BSLS  &kp DE_SLSH  &kp DE_LPRN  SFT_RPRN     &kp DE_ASTR          &kp DE_QUES  SFT_LBRC     &kp DE_RBRC  &kp DE_MINS  &kp DE_COLN  ________
+                ________  &kp DE_ACUT  &kp DE_DLR   &kp DE_PIPE  &kp DE_TILD  &kp DE_HASH          &kp DE_PLUS  &kp DE_PERC  &kp DE_DQUO  &kp DE_QUOT  &kp DE_SCLN  ________
+        	                                           ________  ________     ________             ________     ________     ________
+        	>;
+        };
+
+
+        game_num_layer {
+            bindings = <
+                ________  ________  ________  ________  &mo G_SET   ________          &kp DE_SLSH  &kp N7  &kp N8  &kp N9  &kp DE_MINS  ________
+                ________  &kp LGUI  &sk LALT  &sk LCTRL &sk LSHIFT  ________          &kp DE_ASTR  &kp N4  &kp N5  &kp N6  &kp DE_PLUS  ________
+                ________  ________  ________  ________  &mo G_FN    ________          &kp COMMA    &kp N1  &kp N2  &kp N3  &kp N0  ________
+                                              ________  ________    ________          &kp DE_COLN  &kp DOT  ________
+            >;
+        };
+
+
+        game_fn_layer {
+            bindings = <
+                ________  ________  ________  ________  ________  ________          ________  &kp F7  &kp F8  &kp F9  ________  ________
+                ________  ________  ________  ________  ________  ________          ________  &kp F4  &kp F5  &kp F6  ________  ________
+                ________  ________  ________  ________  ________  ________          ________  &kp F1  &kp F2  &kp F3  &kp F10  ________
+                                              ________  ________  ________          &kp F11   &kp F12  ________
+            >;
+        };
+
+
+        game_settings_layer {
+            bindings = <
+                ________  EXT_OFF       EXT_ON        ________  ________  BT_CLEAR          ________    ________  ________  ________  &to DEF
+                ________  &out OUT_USB  &out OUT_BLE  ________  ________  ________          ________    &to_ipad  BT_5      ________  &to M_DEF
+                ________  ________      ________      ________  ________  ________          ________    &to_mtbk  &to_six   &to_nca   &to G_DEF
+                                                      ________  ________  ________          ________    ________  ________
+            >;
+        };
+
+     };
 };
