@@ -195,26 +195,26 @@
 
         combo_tab {
             timeout-ms = <50>;
-            key-positions = <10 20>;
+            key-positions = <13 25>;
             bindings = <&kp TAB>;
         };
 
         combo_enter {
             timeout-ms = <50>;
-            key-positions = <19 29>;
+            key-positions = <22 34>;
             bindings = <&kp RET>;
         };
 
         combo_win {
             timeout-ms = <50>;
-            key-positions = <30 31>;
+            key-positions = <37 38>;
             bindings = <&kp LGUI>;
             layers = <0 1 2 3 4 5 12 13 14 15 16 17>;
         };
 
         combo_mac_globe {
             timeout-ms = <50>;
-            key-positions = <30 31>;
+            key-positions = <37 38>;
             bindings = <&kp CAPS>;
             layers = <6 7 8 9 10 11>;
         };
