@@ -1,11 +1,11 @@
 manifest:
   remotes:
-    - name: FearlessSpiff
-      url-base: https://github.com/FearlessSpiff
+    - name: zmkfirmware
+      url-base: https://github.com/zmkfirmware
   projects:
     - name: zmk
-      remote: FearlessSpiff
-      revision: feature/cirque-trackpad
+      remote: zmkfirmware
+      revision: main
       import: app/west.yml
   self:
     path: config
