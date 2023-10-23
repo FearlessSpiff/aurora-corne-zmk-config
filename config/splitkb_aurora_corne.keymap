@@ -90,6 +90,7 @@
 #define M_END    &kp LG(RIGHT)
 #define M_PUP    &kp LA(UP)
 #define M_PDWN   &kp LA(DOWN)
+#define M_SRCH   &kp LG(SPACE)
 
 &sk {
         release-after-ms = <3000>;
@@ -279,7 +280,7 @@
                 ________  &kp DE_CIRC  &kp DE_UNDS  &kp DE_LCBR  &kp DE_RCBR  &kp DE_SECT          &kp DE_EXLM  &kp DE_LABK  &kp DE_RABK  &kp DE_EQL   &kp DE_AMPR  ________
                 ________  &kp DE_BSLS  &kp DE_SLSH  &kp DE_LPRN  SFT_RPRN     &kp DE_ASTR          &kp DE_QUES  SFT_LBRC     &kp DE_RBRC  &kp DE_MINS  &kp DE_COLN  ________
                 ________  &kp DE_ACUT  &kp DE_DLR   &kp DE_PIPE  &kp DE_TILD  &kp DE_HASH          &kp DE_PLUS  &kp DE_PERC  &kp DE_DQUO  &kp DE_QUOT  &kp DE_SCLN  ________
-        	                                           ________  ________     ________             ________     ________     ________
+        	                                           ________  &kp AT       ________             ________     ________     ________
         	>;
         };
 
@@ -322,7 +323,7 @@
                 ________  &kp J    &kp L  &kp U        &kp A        &kp Q                   &kp W        &kp B      &kp D      &kp G    &kp DE_Z  ________
                 ________  C_M_NAV  ALT_R  CMD_I        SFT_E        &kp O                   &kp M        SFT_N      CMD_T      RALT_S   ALT_H     ________
                 ________  CTL_V    &kp X  &kp DE_UDIA  &kp DE_ADIA  &kp DE_ODIA             &kp P        &kp F      &kp COMMA  &kp DOT  CTL_K     ________
-                                          &kp CAPS     Y_M_NUM      &kp LSHFT               SPACE_M_SYM  &kp BSPC   &mo MDA
+                                          M_SRCH       Y_M_NUM      &kp LSHFT               SPACE_M_SYM  &kp BSPC   &mo MDA
              >;
         };
 
@@ -347,7 +348,7 @@
                 ________  &kp DE_LABK  &kp DE_UNDS  &kp DE_LCBR     &kp DE_RCBR  &kp LS(N3)           &kp DE_EXLM  &kp DE_CIRC  &kp LS(DE_CIRC)  &kp DE_EQL   &kp DE_AMPR  ________
                 ________  &kp DE_BSLS  &kp DE_SLSH  &kp DE_LPRN     SFT_RPRN     &kp DE_ASTR          &kp DE_QUES  SFT_LBRC     &kp DE_RBRC      &kp DE_MINS  &kp DE_COLN  ________
                 ________  &kp DE_ACUT  &kp DE_DLR   &kp LA(DE_CIRC) &kp DE_TILD  &kp DE_HASH          &kp DE_PLUS  &kp DE_PERC  &kp DE_DQUO      &kp DE_QUOT  &kp DE_SCLN  ________
-        	                                              ________  ________     ________             ________     ________     ________
+        	                                              ________  &kp AT       ________             ________     ________     ________
         	>;
         };
 
@@ -414,7 +415,7 @@
                 ________  &kp DE_CIRC  &kp DE_UNDS  &kp DE_LCBR  &kp DE_RCBR  &kp DE_SECT          &kp DE_EXLM  &kp DE_LABK  &kp DE_RABK  &kp DE_EQL   &kp DE_AMPR  ________
                 ________  &kp DE_BSLS  &kp DE_SLSH  &kp DE_LPRN  SFT_RPRN     &kp DE_ASTR          &kp DE_QUES  SFT_LBRC     &kp DE_RBRC  &kp DE_MINS  &kp DE_COLN  ________
                 ________  &kp DE_ACUT  &kp DE_DLR   &kp DE_PIPE  &kp DE_TILD  &kp DE_HASH          &kp DE_PLUS  &kp DE_PERC  &kp DE_DQUO  &kp DE_QUOT  &kp DE_SCLN  ________
-        	                                           ________  ________     ________             ________     ________     ________
+        	                                           ________  &kp AT       ________             ________     ________     ________
         	>;
         };
 
