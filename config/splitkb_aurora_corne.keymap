@@ -91,7 +91,8 @@
 #define M_END    &kp LG(RIGHT)
 #define M_PUP    &kp LA(UP)
 #define M_PDWN   &kp LA(DOWN)
-#define M_SRCH   &kp LG(SPACE)
+//#define M_SRCH   &kp LG(SPACE)
+#define M_MC   &kp C_AC_DESKTOP_SHOW_ALL_WINDOWS
 
 &sk {
         release-after-ms = <3000>;
@@ -324,7 +325,7 @@
                 ________  &kp J    &kp L  &kp U        &kp A        &kp Q                   &kp W        &kp B      &kp D      &kp G    &kp DE_Z  ________
                 ________  C_M_NAV  ALT_R  CMD_I        SFT_E        &kp O                   &kp M        SFT_N      CMD_T      RALT_S   ALT_H     ________
                 ________  CTL_V    &kp X  &kp DE_UDIA  &kp DE_ADIA  &kp DE_ODIA             &kp P        &kp F      &kp COMMA  &kp DOT  CTL_K     ________
-                                          M_SRCH       Y_M_NUM      &kp LSHFT               SPACE_M_SYM  &kp BSPC   &mo MDA
+                                          M_MC         Y_M_NUM      &kp LSHFT               SPACE_M_SYM  &kp BSPC   &mo MDA
              >;
         };
 
