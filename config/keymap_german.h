@@ -137,3 +137,70 @@
 // Row 4
 #define DE_PIPE RA(DE_LABK) // |
 #define DE_MICR RA(DE_M)    // µ
+
+// Workaround for stupid Win Remote Desktop problem
+/* Shifted symbols
+ * ┌───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───────┐
+ * │ ° │ ! │ " │ § │ $ │ % │ & │ / │ ( │ ) │ = │ ? │ ` │       │
+ * ├───┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─────┤
+ * │     │   │   │   │   │   │   │   │   │   │   │   │ * │     │
+ * ├─────┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┐    │
+ * │      │   │   │   │   │   │   │   │   │   │   │   │ ' │    │
+ * ├────┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴───┴────┤
+ * │    │ > │   │   │   │   │   │   │   │ ; │ : │ _ │          │
+ * ├────┼───┴┬──┴─┬─┴───┴───┴───┴───┴───┴──┬┴───┼───┴┬────┬────┤
+ * │    │    │    │                        │    │    │    │    │
+ * └────┴────┴────┴────────────────────────┴────┴────┴────┴────┘
+ */
+// Row 1
+#define _DEG  DE_CIRC  // °
+#define _EXLM DE_1     // !
+#define _DQUO DE_2     // "
+#define _SECT DE_3     // §
+#define _DLR  DE_4     // $
+#define _PERC DE_5     // %
+#define _AMPR DE_6     // &
+#define _SLSH DE_7     // /
+#define _LPRN DE_8     // (
+#define _RPRN DE_9     //
+#define _EQL  DE_0     // =
+#define _QUES DE_SS    // ?
+#define _GRV  DE_ACUT  // ` (dead)
+// Row 2
+#define _ASTR DE_PLUS  // *
+// Row 3
+#define _QUOT DE_HASH  // '
+// Row 4
+#define _RABK DE_LABK  // >
+#define _SCLN DE_COMM  // ;
+#define _COLN DE_DOT   // :
+#define _UNDS DE_MINS  // _
+
+/* AltGr symbols RA(XXX)
+ * ┌───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───────┐
+ * │   │   │ ² │ ³ │   │   │   │ { │ [ │ ] │ } │ \ │   │       │
+ * ├───┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─────┤
+ * │     │ @ │   │ € │   │   │   │   │   │   │   │   │ ~ │     │
+ * ├─────┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┐    │
+ * │      │   │   │   │   │   │   │   │   │   │   │   │   │    │
+ * ├────┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴───┴────┤
+ * │    │ | │   │   │   │   │   │   │ µ │   │   │   │          │
+ * ├────┼───┴┬──┴─┬─┴───┴───┴───┴───┴───┴──┬┴───┼───┴┬────┬────┤
+ * │    │    │    │                        │    │    │    │    │
+ * └────┴────┴────┴────────────────────────┴────┴────┴────┴────┘
+ */
+// Row 1
+#define _SUP2 DE_2     // ²
+#define _SUP3 DE_3     // ³
+#define _LCBR DE_7     // {
+#define _LBRC DE_8     // [
+#define _RBRC DE_9     // ]
+#define _RCBR DE_0     // }
+#define _BSLS DE_SS    // (backslash)
+// Row 2
+#define _AT   DE_Q     // @
+#define _EURO DE_E     // €
+#define _TILD DE_PLUS  // ~
+// Row 4
+#define _PIPE DE_LABK  // |
+#define _MICR DE_M     // µ
