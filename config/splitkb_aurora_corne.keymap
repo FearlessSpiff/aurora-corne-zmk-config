@@ -9,6 +9,7 @@
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/ext_power.h>
 #include <dt-bindings/zmk/outputs.h>
+#include <dt-bindings/zmk/mouse.h>
 #include "keymap_german.h"
 
 // Layers
@@ -370,8 +371,8 @@
         nav_layer {
             bindings = <
             	________  &kp ESC   &lck        &run       &go_src    ________             &kp PG_UP  &kp HOME  &kp UP    &kp END    &kp DE_Y   ________
-            	________  ________  ________    ________   ________   ________             &kp PG_DN  &kp LEFT  &kp DOWN  &kp RIGHT  &kp RET    ________
-            	________  &kp LSHFT ________    ________   ________   ________             ________   ________  ________  ________   &kp DE_SS  ________
+            	________  ________  &mkp MCLK   ________   ________   ________             &kp PG_DN  &kp LEFT  &kp DOWN  &kp RIGHT  &kp RET    ________
+            	________  &kp LSHFT ________    &mkp RCLK  &mkp LCLK  ________             ________   ________  ________  ________   &kp DE_SS  ________
             	                                ________   ________   ________             ________   &kp DEL   ________
    			>;
         };
@@ -438,8 +439,8 @@
         mac_nav_layer {
             bindings = <
             	________  &kp ESC   &lck_mac   &run       &go_src    ________             M_PUP    M_HME      &kp UP    M_END      &kp DE_Y   ________
-            	________  ________  ________   ________   ________   ________             M_PDWN   &kp LEFT   &kp DOWN  &kp RIGHT  &kp RET    ________
-            	________  &kp LSHFT ________   ________   ________   ________             ________  ________  ________  ________   &kp DE_SS  ________
+            	________  ________  &mkp MCLK  ________   ________   ________             M_PDWN   &kp LEFT   &kp DOWN  &kp RIGHT  &kp RET    ________
+            	________  &kp LSHFT ________   &mkp RCLK  &mkp LCLK  ________             ________  ________  ________  ________   &kp DE_SS  ________
             	                               ________   ________   ________             ________  &kp DEL   ________
    			>;
         };
@@ -505,8 +506,8 @@
         game_nav_layer {
             bindings = <
             	________  &kp ESC   &lck        &run       &go_src    ________             &kp PG_UP  &kp HOME  &kp UP    &kp END    &kp DE_Y   ________
-            	________  ________  ________    ________   ________   ________             &kp PG_DN  &kp LEFT  &kp DOWN  &kp RIGHT  &kp RET    ________
-            	________  &kp LSHFT ________    ________   ________   ________             ________   ________  ________  ________   &kp DE_SS  ________
+            	________  ________  &mkp MCLK   ________   ________   ________             &kp PG_DN  &kp LEFT  &kp DOWN  &kp RIGHT  &kp RET    ________
+            	________  &kp LSHFT ________    &mkp RCLK  &mkp LCLK  ________             ________   ________  ________  ________   &kp DE_SS  ________
             	                                ________   ________   ________             ________   &kp DEL   ________
    			>;
         };
