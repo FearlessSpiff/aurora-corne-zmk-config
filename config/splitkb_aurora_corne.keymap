@@ -71,6 +71,8 @@
 #define ALT_R &hm LALT R
 #define CTL_I &hm LCTRL I
 #define SFT_E &hm LSHIFT E
+#define LGU_V &hm LGUI V
+
 
 // home row mod right
 #define SFT_N    &hm RSHIFT N
@@ -361,7 +363,7 @@
             bindings = <
                 ________  &kp J  &kp L  &kp U        &kp A        &kp Q                   &kp W      &kp B      &kp D      &kp G    &kp DE_Z  ________
                 ________  C_NAV  ALT_R  CTL_I        SFT_E        &kp O                   &kp M      SFT_N      CTL_T      RALT_S   ALT_H     ________
-                ________  &kp V  &kp X  &kp DE_UDIA  &kp DE_ADIA  &kp DE_ODIA             &kp P      &kp F      &kp COMMA  &kp DOT  &kp K     ________
+                ________  LGU_V  &kp X  &kp DE_UDIA  &kp DE_ADIA  &kp DE_ODIA             &kp P      &kp F      &kp COMMA  &kp DOT  &kp K     ________
                                         &kp LGUI     Y_NUM        &kp LSHFT               SPACE_SYM  &kp BSPC   SS_MDA
              >;
         };
