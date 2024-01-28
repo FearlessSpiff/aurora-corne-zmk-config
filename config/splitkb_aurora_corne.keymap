@@ -398,7 +398,7 @@
             bindings = <
                 ________  ________  ________  ________  &mo SET     ________         &kp DE_SLSH  &kp N7   &kp N8    &kp N9  &kp DE_MINS  ________
                 ________  &sk LGUI  &sk RALT  &sk LCTRL &sk LSHIFT  ________         &kp DE_ASTR  &kp N4   &kp N5    &kp N6  &kp DE_PLUS  ________
-                ________  ________  ________  ________  &mo FN      ________         &kp COMMA    &kp N1   &kp N2    &kp N3  &kp N0       ________
+                ________  &sk RALT  ________  ________  &mo FN      ________         &kp COMMA    &kp N1   &kp N2    &kp N3  &kp N0       ________
                                               ________  ________    ________         &kp DE_COLN  &kp DOT  ________
             >;
         };
@@ -466,7 +466,7 @@
             bindings = <
                 ________  ________   ________  ________  &mo M_SET   ________          &kp DE_SLSH  &kp N7   &kp N8  &kp N9  &kp DE_MINS  ________
                 ________  &sk LCTRL  &sk LALT  &sk LGUI  &sk LSHIFT  ________          &kp DE_ASTR  &kp N4   &kp N5  &kp N6  &kp DE_PLUS  ________
-                ________  ________   ________  ________  &mo M_FN    ________          &kp COMMA    &kp N1   &kp N2  &kp N3  &kp N0       ________
+                ________  &sk RALT   ________  ________  &mo M_FN    ________          &kp COMMA    &kp N1   &kp N2  &kp N3  &kp N0       ________
                                                ________  ________    ________          &kp DE_COLN  &kp DOT  ________
             >;
         };
@@ -533,7 +533,7 @@
             bindings = <
                 ________  ________  ________  ________  &mo G_SET   ________          &kp DE_SLSH  &kp N7   &kp N8  &kp N9  &kp DE_MINS  ________
                 ________  &kp LGUI  &sk LALT  &sk LCTRL &sk LSHIFT  ________          &kp DE_ASTR  &kp N4   &kp N5  &kp N6  &kp DE_PLUS  ________
-                ________  ________  ________  ________  &mo G_FN    ________          &kp COMMA    &kp N1   &kp N2  &kp N3  &kp N0       ________
+                ________  &sk RALT  ________  ________  &mo G_FN    ________          &kp COMMA    &kp N1   &kp N2  &kp N3  &kp N0       ________
                                               ________  ________    ________          &kp DE_COLN  &kp DOT  ________
             >;
         };
