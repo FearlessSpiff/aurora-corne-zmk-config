@@ -78,7 +78,7 @@
 #define SFT_N    &hm RSHIFT N
 #define CTL_T    &hm RCTRL T
 #define RALT_S   &hm RALT S
-#define ALT_H    &hm LALT H
+#define LALT_H    &hm LALT H
 
 // home row mod mac
 #define CMD_I  &hm LGUI I
@@ -362,7 +362,7 @@
         default_layer {
             bindings = <
                 ________  &kp J  &kp L  &kp U        &kp A        &kp Q                   &kp W      &kp B      &kp D      &kp G    &kp DE_Z  ________
-                ________  C_NAV  ALT_R  CTL_I        SFT_E        &kp O                   &kp M      SFT_N      CTL_T      RALT_S   ALT_H     ________
+                ________  C_NAV  ALT_R  CTL_I        SFT_E        &kp O                   &kp M      SFT_N      CTL_T      RALT_S   LALT_H    ________
                 ________  LGU_V  &kp X  &kp DE_UDIA  &kp DE_ADIA  &kp DE_ODIA             &kp P      &kp F      &kp COMMA  &kp DOT  &kp K     ________
                                         &kp LGUI     Y_NUM        &kp LSHFT               SPACE_SYM  &kp BSPC   SS_MDA
              >;
@@ -398,7 +398,7 @@
             bindings = <
                 ________  ________  ________  ________  &mo SET     ________         &kp DE_SLSH  &kp N7   &kp N8    &kp N9  &kp DE_MINS  ________
                 ________  &sk LGUI  &sk RALT  &sk LCTRL &sk LSHIFT  ________         &kp DE_ASTR  &kp N4   &kp N5    &kp N6  &kp DE_PLUS  ________
-                ________  &sk RALT  ________  ________  &mo FN      ________         &kp COMMA    &kp N1   &kp N2    &kp N3  &kp N0       ________
+                ________  &sk LALT  ________  ________  &mo FN      ________         &kp COMMA    &kp N1   &kp N2    &kp N3  &kp N0       ________
                                               ________  ________    ________         &kp DE_COLN  &kp DOT  ________
             >;
         };
@@ -430,7 +430,7 @@
         mac_default_layer {
             bindings = <
                 ________  &kp J    &kp L  &kp U        &kp A        &kp Q                   &kp W        &kp B      &kp D      &kp G    &kp DE_Z  ________
-                ________  C_M_NAV  ALT_R  CMD_I        SFT_E        &kp O                   &kp M        SFT_N      CMD_T      RALT_S   ALT_H     ________
+                ________  C_M_NAV  ALT_R  CMD_I        SFT_E        &kp O                   &kp M        SFT_N      CMD_T      RALT_S   LALT_H    ________
                 ________  CTL_V    &kp X  &kp DE_UDIA  &kp DE_ADIA  &kp DE_ODIA             &kp P        &kp F      &kp COMMA  &kp DOT  CTL_K     ________
                                           M_MC         Y_M_NUM      &kp LSHFT               SPACE_M_SYM  &kp BSPC   &mo MDA
              >;
