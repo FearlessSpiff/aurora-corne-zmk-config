@@ -292,12 +292,12 @@
                 ;
         )
 
-        ZMK_MACRO(to_ipad,
+        ZMK_MACRO(to_mini,
             wait-ms = <30>;
             tap-ms = <40>;
             bindings
                 = <&macro_tap  BT_5>
-                , <&macro_tap  &to M_DEF>
+                , <&macro_tap  &to DEF>
                 ;
         )
 
@@ -415,8 +415,8 @@
 
         settings_layer {
             bindings = <
-                ________  EXT_OFF       EXT_ON        ________  ________  BT_CLEAR          ________  &to DEF  &to M_DEF  &to G_DEF  ________   ________
-                ________  &out OUT_USB  &out OUT_BLE  ________  ________  ________          ________    &to_sd    &to_ipad  BT_6     ________   ________
+                ________  EXT_OFF       EXT_ON        ________  ________  BT_CLEAR          ________  &to DEF  &to M_DEF    &to G_DEF  ________   ________
+                ________  &out OUT_USB  &out OUT_BLE  ________  ________  ________          ________    &to_sd    &to_mini  BT_6     ________   ________
                 ________  ________      ________      ________  ________  ________          ________    &to_mtbk  &to_nca   &to_scd  &to_devvm  ________
                                                       ________  ________  ________          ________    ________  ________
             >;
@@ -484,7 +484,7 @@
         mac_settings_layer {
             bindings = <
                 ________  EXT_OFF       EXT_ON        ________  ________  BT_CLEAR          ________  &to DEF  &to M_DEF  &to G_DEF  ________   ________
-                ________  &out OUT_USB  &out OUT_BLE  ________  ________  ________          ________  &to_sd    &to_ipad  BT_6       ________   ________
+                ________  &out OUT_USB  &out OUT_BLE  ________  ________  ________          ________  &to_sd    &to_mini  BT_6       ________   ________
                 ________  ________      ________      ________  ________  ________          ________  &to_mtbk  &to_nca   &to_scd    &to_devvm  ________
                                                       ________  ________  ________          ________  ________  ________
             >;
@@ -551,7 +551,7 @@
         game_settings_layer {
             bindings = <
                 ________  EXT_OFF       EXT_ON        ________  ________  BT_CLEAR          ________  &to DEF  &to M_DEF  &to G_DEF  ________   ________
-                ________  &out OUT_USB  &out OUT_BLE  ________  ________  ________          ________  &to_sd    &to_ipad  BT_6       ________   ________
+                ________  &out OUT_USB  &out OUT_BLE  ________  ________  ________          ________  &to_sd    &to_mini  BT_6       ________   ________
                 ________  ________      ________      ________  ________  ________          ________  &to_mtbk  &to_nca   &to_scd    &to_devvm  ________
                                                       ________  ________  ________          ________  ________  ________
             >;
